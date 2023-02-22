@@ -82,6 +82,19 @@
             newMessageText: ''
           }
         },
+
+        methods: {
+            sendMessage() {
+              if (this.newMessageText) {
+                this.messages.push({
+                  id: this.messages.length + 1,
+                  text: this.newMessageText,
+                  isSentByUser: true
+                });
+                this.newMessageText = '';
+              }
+            }
+          }
       
       });       
 

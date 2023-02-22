@@ -25,36 +25,45 @@
         <div class="row mt-5">
 
             <!-- CONTATTI -->
-            <div class="contacts col-5 border">
+            <div class="contacts col-5">
 
                 <ul class="list-unstyled">
 
                     <!-- IMG PERSONALE -->
 
-                    <li class="personale p-3">
+                    <ul class="personale p-3 list-unstyled">
 
-                        <img src="./img/profilo.jpg" alt="Img profilo">
+                        <li><img src="./img/profilo.jpg" alt="Img profilo"></li>
+                        <li class="icone-personale"><i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i> 
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </li>
 
-                    </li>
+                        
+
+                    </ul>
 
                     <!-- NOTIFICHE -->
 
-                    <li class="notifiche mb-2 p-3">
-                        Notifiche
-
+                    <li class="notifiche p-3 d-flex">
+                        <div class="bell"><i class="fa-solid fa-bell-slash col-10 p-3"></i></div>
+                        <div class="col-12 mx-3">
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <h6>Attiva notifiche desktop</h6>
+                        </div>
 
                     </li>
 
                     <!-- BARRA DI RICERCA -->
                     <li>
                          
-                 <div class="cella-search">
+                 <div>
 
-                    <div class="form-outline mb-3 mt-3">
+                    <div class="form-outline mb-3 cella-search">
                         <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" />
                       </div>
     
-                    </div> 
+                </div> 
 
                     </li>
 

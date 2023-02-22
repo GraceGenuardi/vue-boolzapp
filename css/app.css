@@ -4,6 +4,12 @@
 
 
 /***CONTACT RULES***/
+.contacts {
+    overflow-y: scroll;
+
+}
+
+
 .contact {
     display: flex;
     align-items: center;
@@ -33,6 +39,21 @@
 
   .personale{
     background-color:#EAEAEA ;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .personale i {
+    display: flex;
+    margin: 8px;
+
+  }
+
+  .icone-personale{
+    display: flex;
+    margin-left: 320px;
+    font-size: 20px;
+    color:#80868A;
   }
 
   .personale img {
@@ -44,6 +65,16 @@
 
   .notifiche {
     background-color: #8EDAFC;
+  }
+
+  .notifiche h5 {
+    font-size: 15px;
+  }
+
+  .notifiche h6 {
+    font-size: 13px;
+    color: grey;
+    text-decoration: underline;
   }
 
 
@@ -75,6 +106,8 @@
     color: black;
     align-self: flex-start;
   }
+
+  
   form {
     display: flex;
     margin-top: 600px;
@@ -100,6 +133,7 @@
     padding: 10px;
 }
 
+/**ICON RULES**/
 .smile {
     border-color: white;
     border-radius: 100%;
@@ -117,4 +151,18 @@
     padding: 5px;
     margin-bottom: 15px;
 }
+
+.cella-search{
+    background-color:#EAEAEA ;
+    padding: 10px;
+}
+
+.bell{
+    border: 3px solid white;
+    border-radius: 100%;
+    font-size: 20px;
+    background-color: white;
+}
+
+
   
