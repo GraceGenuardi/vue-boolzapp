@@ -57,6 +57,13 @@
                 image: 'img/image8.jpg',
                 lastMessage: 'Passeggiata?'
               },
+              {
+                id: 9,
+                name: 'Stannis',
+                image: 'img/image9.jpg',
+                lastMessage: 'No.'
+              },
+
               
             ],
             messages: [

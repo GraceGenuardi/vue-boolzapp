@@ -215,6 +215,8 @@
     border-left: none;
     padding-left: 0;
    height: 900px;
+   overflow-y: scroll;
+   
   }
   
   .chat {
