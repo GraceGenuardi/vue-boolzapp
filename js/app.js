@@ -13,51 +13,51 @@
             contacts: [
               {
                 id: 1,
-                name: 'John Doe',
+                name: 'Deny',
                 image: 'img/image1.jpg',
-                lastMessage: 'Hello there!'
+                lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?'
               },
               {
                 id: 2,
-                name: 'Jane Smith',
+                name: 'Cesira',
                 image: 'img/image2.jpg',
-                lastMessage: 'How are you?'
+                lastMessage: 'Personalmente, sceglierò la violenza..'
               },
               {
                 id: 3,
-                name: 'Bob Johnson',
+                name: 'Jonny',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: 'Guarda, io non so nulla.'
               },
               {
                 id: 4,
-                name: 'Bob Johnson',
+                name: 'Jonny',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: '....'
               },
               {
                 id: 5,
-                name: 'Bob Johnson',
+                name: 'bu',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: '...'
               },
               {
                 id: 6,
-                name: 'Bob Johnson',
+                name: 'bu',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: '...'
               },
               {
                 id: 7,
-                name: 'Bob Johnson',
+                name: 'Bu',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: '...'
               },
               {
                 id: 8,
-                name: 'Bob Johnson',
+                name: 'Bu',
                 image: 'img/image3.jpg',
-                lastMessage: 'See you later!'
+                lastMessage: '...'
               }
 
 
@@ -65,17 +65,17 @@
             messages: [
               {
                 id: 1,
-                text: 'Hello there!',
+                text: 'Buongiorno cara, caffettino più tardi?🌻',
                 isSentByUser: true
               },
               {
                 id: 2,
-                text: 'Hi!',
+                text: 'Buongiorno a te',
                 isSentByUser: false
               },
               {
                 id: 3,
-                text: 'How are you?',
+                text: 'Caffè? Non è meglio na birretta?🍻',
                 isSentByUser: false
               }
             ],

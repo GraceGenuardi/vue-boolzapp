@@ -83,9 +83,16 @@
 
 
             <!-- CHAT -->
-            <div class="chat col-7 border p-5">
-              Chat
-            </div>
+            <div class="chat col-7">
+                <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
+                  <p>{{ message.text }}</p>
+                </div>
+                <form @submit.prevent="sendMessage" >
+                  <button type="submit"><i class="fa-regular fa-face-smile"></i></button> 
+                  <input type="text" v-model="newMessageText" placeholder="Scrivi un messaggio">
+                  <button type="submit"><i class="fa-solid fa-microphone"></i></button>
+                </form>
+              </div>
 
 
 

@@ -45,4 +45,41 @@
   .notifiche {
     background-color: #8EDAFC;
   }
+
+
+  /***CHAT RULES***/
+
+  .chat {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+  .message {
+    display: inline-block;
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .sent {
+    background-color: #D1ECBC;
+    color: black;
+    align-self: flex-end;
+  }
+  .received {
+    background-color: #F2F2F2;
+    color: black;
+    align-self: flex-start;
+  }
+  form {
+    display: flex;
+    margin-top: 600px;
+  }
+  form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+}  
   
