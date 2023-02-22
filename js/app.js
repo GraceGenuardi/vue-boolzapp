@@ -1,19 +1,17 @@
-//Milestone 1
-  //● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e
-      //dall’interlocutore (bianco) assegnando due classi CSS diverse
-  //● Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare
-     //nome e immagine di ogni contatto
+
+
+     
 
 
      //const app = Vue.createApp({
-        
+       //MILSTONE 1 parte grafica + v for nomi e contatti 
      const app = Vue.createApp({
         data() {
           return {
             contacts: [
               {
                 id: 1,
-                name: 'Deny',
+                name: 'Daeny',
                 image: 'img/image1.jpg',
                 lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?'
               },
@@ -31,41 +29,40 @@
               },
               {
                 id: 4,
-                name: 'Jonny',
-                image: 'img/image3.jpg',
-                lastMessage: '....'
+                name: 'Tyrion',
+                image: 'img/image4.jpg',
+                lastMessage: 'Beviamo qualcosa più tardi?🍷'
               },
               {
                 id: 5,
-                name: 'bu',
-                image: 'img/image3.jpg',
-                lastMessage: '...'
+                name: 'Sansina Mia',
+                image: 'img/image5.jpg',
+                lastMessage: 'Arya mi sta facendo perdere la pazienza!'
               },
               {
                 id: 6,
-                name: 'bu',
-                image: 'img/image3.jpg',
-                lastMessage: '...'
+                name: 'Margeryna',
+                image: 'img/image6.jpg',
+                lastMessage: 'Domani andiamo a fare shopping, ho bisogno di scarpe nuove🌹'
               },
               {
                 id: 7,
-                name: 'Bu',
-                image: 'img/image3.jpg',
-                lastMessage: '...'
+                name: 'Arya',
+                image: 'img/image7.jpg',
+                lastMessage: 'Ho litigato con Sansa'
               },
               {
                 id: 8,
-                name: 'Bu',
-                image: 'img/image3.jpg',
-                lastMessage: '...'
-              }
-
-
+                name: 'Brandon',
+                image: 'img/image8.jpg',
+                lastMessage: 'Passeggiata?'
+              },
+              
             ],
             messages: [
               {
                 id: 1,
-                text: 'Buongiorno cara, caffettino più tardi?🌻',
+                text: 'Buongiorno cara, come stai oggi?🔔',
                 isSentByUser: true
               },
               {
@@ -75,24 +72,40 @@
               },
               {
                 id: 3,
-                text: 'Caffè? Non è meglio na birretta?🍻',
+                text: 'Ci sei per dare fuoco a qualcosa più tardi?',
                 isSentByUser: false
               }
             ],
             newMessageText: ''
           }
+
+          //MILSTONE 3: Messaggio send + risposta
+          return {
+            messages: [],
+            newMessageText: '',
+          };
         },
 
         methods: {
             sendMessage() {
-              if (this.newMessageText) {
-                this.messages.push({
-                  id: this.messages.length + 1,
-                  text: this.newMessageText,
-                  isSentByUser: true
-                });
-                this.newMessageText = '';
-              }
+                if (!this.newMessageText) {
+                    return;
+                  }
+                  const newMessage = {
+                    text: this.newMessageText,
+                    isSentByUser: true,
+                    timestamp: Date.now(),
+                  };
+                  this.messages.push(newMessage);
+                  this.newMessageText = '';
+                  setTimeout(() => {
+                    const responseMessage = {
+                      text: 'Ok, va bene!',
+                      isSentByUser: false,
+                      timestamp: Date.now(),
+                    };
+                    this.messages.push(responseMessage);
+                  }, 1000);
             }
           }
       

@@ -14,8 +14,8 @@
 <body>
     <!-- MACRO-CONTAINER -->
 
-    <div class="container">
-
+    <div class="header"> 
+    </div>
 
 
        <div class="container"  id="app">
@@ -25,13 +25,13 @@
         <div class="row mt-5">
 
             <!-- CONTATTI -->
-            <div class="contacts col-5">
+            <div class="contacts col-5 bg-light">
 
                 <ul class="list-unstyled">
 
                     <!-- IMG PERSONALE -->
 
-                    <ul class="personale p-3 list-unstyled">
+                    <ul class="personale list-unstyled">
 
                         <li><img src="./img/profilo.jpg" alt="Img profilo"></li>
                         <li class="icone-personale"><i class="fa-solid fa-circle-notch"></i>
@@ -93,6 +93,23 @@
 
             <!-- CHAT -->
             <div class="chat col-7">
+
+            <!-- HEADER CHAT  -->
+                
+
+                    <div class="header-chat mb-3 d-flex">
+
+                        <img src="./img/image1.jpg" alt="Img profilo">
+                        <ul class="list-unstyled mx-2">
+                            <li><h6>Daeny</h6></li>
+                            <li><p>Ultimo accesso alle ore 13:45</p></li>
+                        </ul>
+                    </div>
+
+                
+
+
+              <!-- MESSAGGI CHAT -->
                 <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
                   <p>{{ message.text }}</p>
                 </div>
@@ -111,7 +128,7 @@
 
 
   </div>
- </div>
+ 
 
 </div>
     
