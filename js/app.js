@@ -28,7 +28,39 @@
                 name: 'Bob Johnson',
                 image: 'img/image3.jpg',
                 lastMessage: 'See you later!'
+              },
+              {
+                id: 4,
+                name: 'Bob Johnson',
+                image: 'img/image3.jpg',
+                lastMessage: 'See you later!'
+              },
+              {
+                id: 5,
+                name: 'Bob Johnson',
+                image: 'img/image3.jpg',
+                lastMessage: 'See you later!'
+              },
+              {
+                id: 6,
+                name: 'Bob Johnson',
+                image: 'img/image3.jpg',
+                lastMessage: 'See you later!'
+              },
+              {
+                id: 7,
+                name: 'Bob Johnson',
+                image: 'img/image3.jpg',
+                lastMessage: 'See you later!'
+              },
+              {
+                id: 8,
+                name: 'Bob Johnson',
+                image: 'img/image3.jpg',
+                lastMessage: 'See you later!'
               }
+
+
             ],
             messages: [
               {

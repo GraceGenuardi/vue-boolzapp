@@ -13,28 +13,77 @@
 </head>
 <body>
     <!-- MACRO-CONTAINER -->
- <div class="container"  id="app">
 
-    <div class="row">
+    <div class="container">
 
-        
+
+
+       <div class="container"  id="app">
+
+    
+
+        <div class="row mt-5">
 
             <!-- CONTATTI -->
-            <div class="contacts col-2 border p-5">
+            <div class="contacts col-5 border">
+
+                <ul class="list-unstyled">
+
+                    <!-- IMG PERSONALE -->
+
+                    <li class="personale p-3">
+
+                        <img src="./img/profilo.jpg" alt="Img profilo">
+
+                    </li>
+
+                    <!-- NOTIFICHE -->
+
+                    <li class="notifiche mb-2 p-3">
+                        Notifiche
+
+
+                    </li>
+
+                    <!-- BARRA DI RICERCA -->
+                    <li>
+                         
+                 <div class="cella-search">
+
+                    <div class="form-outline mb-3 mt-3">
+                        <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" />
+                      </div>
+    
+                    </div> 
+
+                    </li>
+
+
+
+                    <!-- CONTATTI -->
+                    <li>
                
                 <div v-for="contact in contacts" :key="contact.id" class="contact">
                     <img :src="contact.image" alt="Contact Image">
                     <div class="contact-info">
                       <h3>{{ contact.name }}</h3>
-                      <p>Last message: {{ contact.lastMessage }}</p>
+                      <p> {{ contact.lastMessage }}</p>
                     </div>
                   </div>
+
+
+                    </li>
+                </ul>
+
+                
+
+                
 
             </div>
 
 
             <!-- CHAT -->
-            <div class="chat col-10 border p-5">
+            <div class="chat col-7 border p-5">
               Chat
             </div>
 
@@ -45,8 +94,10 @@
 
 
 
-
+  </div>
  </div>
+
+</div>
     
 
 
