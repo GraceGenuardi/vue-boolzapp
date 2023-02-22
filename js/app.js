@@ -100,7 +100,7 @@
                   this.newMessageText = '';
                   setTimeout(() => {
                     const responseMessage = {
-                      text: 'Ok, va bene!',
+                      text: 'Okay, va bene!',
                       isSentByUser: false,
                       timestamp: Date.now(),
                     };
