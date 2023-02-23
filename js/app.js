@@ -3,9 +3,10 @@
      
 
 
+    
      //const app = Vue.createApp({
        //MILSTONE 1 parte grafica + v for nomi e contatti 
-     const app = Vue.createApp({
+       const app = Vue.createApp({
         data() {
           return {
             contacts: [
@@ -14,7 +15,24 @@
                 name: 'Daeny',
                 image: 'img/image1.jpg',
                 lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?',
-                isActive: true // nuova proprietà per gestire lo stato di Daeny
+                isActive: true, // nuova proprietà per gestire lo stato di Daeny
+                messages: [  //MILSTONE 2
+                  {
+                    id: 1,
+                    text: "Ciao come stai?",
+                    isSentByUser: true
+                  },
+                  {
+                    id: 2,
+                    text: "Bene grazie! E tu?",
+                    isSentByUser: false
+                  },
+                  {
+                    id: 3,
+                    text: "Anch'io bene, grazie!",
+                    isSentByUser: true
+                  }
+                ]
               },
               {
                 id: 2,
@@ -122,6 +140,4 @@
 
 
       app.mount('#app');
-    
-
-
+  
