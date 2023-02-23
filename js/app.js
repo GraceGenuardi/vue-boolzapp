@@ -1,14 +1,9 @@
-
-
-     
-
-
-    
-     //const app = Vue.createApp({
-       //MILSTONE 1 parte grafica + v for nomi e contatti 
+//MILSTONE 1 parte grafica + v for nomi e contatti 
        const app = Vue.createApp({
         data() {
           return {
+            searchText: '',
+
             contacts: [
               {
                 id: 1,
@@ -23,6 +18,7 @@
                 name: 'Cesira',
                 image: 'img/image2.jpg',
                 lastMessage: 'Personalmente, sceglierò la violenza..'
+                
               },
               {
                 id: 3,
@@ -66,6 +62,12 @@
                 image: 'img/image9.jpg',
                 lastMessage: 'No.'
               },
+              {
+                id: 10,
+                name: 'Drogon',
+                image: 'img/image10.jpg',
+                lastMessage: 'Dracarys'
+              },
 
               
             ],
@@ -87,6 +89,7 @@
               }
             ],
             newMessageText: ''
+            
           }
 
           //MILSTONE 3: Messaggio send + risposta
@@ -94,8 +97,17 @@
             messages: [],
             newMessageText: '',
           };
+
+          
         },
 
+        computed: {
+          filteredContacts() {
+            return this.contacts.filter(contact =>
+              contact.name.toLowerCase().includes(this.searchText.toLowerCase())
+            );
+          }
+        },
         methods: {
 
               
@@ -138,4 +150,3 @@
 
 
       app.mount('#app');
-  

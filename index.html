@@ -57,38 +57,35 @@
 
                     </li>
 
+
                     <!-- BARRA DI RICERCA -->
-                    <li>
-                         
-                 <div>
-
-                  <div class="form-outline cella-search">
-                    <label class="icon" for="form1"><i class="fas fa-search"></i></label>
-                    <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" />
-                  </div>
-    
-                </div> 
-
-                    </li>
-
-<!-- MILSTONE 2: INIZIO -->
+                   <li>
+                    <div class="form-outline cella-search">
+                     <label class="icon" for="form1"><i class="fas fa-search"></i></label>
+                     <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" v-model="searchText" />
+                    </div>
+                     
+                  </li>
 
                       
 
-                       <!-- CLICK SUL CONTATTO PER MOSTRARE LA CONVERSAZIONE -->
+                      
 
                     <!-- CONTATTI -->
-                    <li>
+                    
                <!-- V-FOR PER VISUALIZZARE TUTTI I CONTATTI -->
-               <li v-for="(contact, index) in contacts" :key="contact.id" v-bind:class="{ 'daeny': contact.isActive }" >
-                <div class="contact" @click="showConversation(index)">
-                  <img :src="contact.image" alt="contact image">
-                  <div class="contact-info">
-                    <h3>{{ contact.name }}</h3>
-                    <p>{{ contact.lastMessage }}</p>
-                  </div>
-                </div>
-              </li>
+                  <li v-for="(contact, index) in filteredContacts" :key="contact.id" v-bind:class="{ 'daeny': contact.isActive }" >
+
+                   <div class="contact" @click="showConversation(index)">
+                     <img :src="contact.image" alt="contact image">
+                      <div class="contact-info">
+                        <h3>{{ contact.name }}</h3>
+                        <p>{{ contact.lastMessage }}</p>
+                      </div>
+
+                    </div>
+                  </li>
+                  
                 </ul>
             </div>
 
@@ -99,34 +96,47 @@
 
 
             <!-- CHAT -->
-<div class="chat col-7">
+   <div class="chat col-7">
 
-  <!-- HEADER CHAT -->
-  <div class="header-chat mb-3 d-flex">
-    <img :src="getActiveContact().image" alt="Img profilo">
-    <ul class="list-unstyled mx-2">
-      <li><h6>{{ getActiveContact().name }}</h6></li>
-      <li class="d-flex"><div class="online"></div> <span class=" online-span">Online</span></li>
-    </ul>
-    <!-- icone  -->
-    <ul class="list-unstyled d-flex icone-header-chat">
-      <li><i class="fa-solid fa-magnifying-glass mx-2"></i></li>
-      <li><i class="fa-solid fa-paperclip mx-2"></i></li>
-      <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-    </ul>
-  </div>
+      <!-- HEADER CHAT -->
+      <div class="header-chat mb-3 d-flex">
+        <img :src="getActiveContact().image" alt="Img profilo">
+         <ul class="list-unstyled mx-2">
+            <li><h6>{{ getActiveContact().name }}</h6></li>
+            <li class="d-flex"><div class="online"></div> <span class=" online-span">Online</span></li>
+          </ul>
 
-  <!-- MESSAGGI CHAT -->
-  <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
-    <p>{{ message.text }}</p>
-  </div>
-  <!-- FORM MESSAGGIO -->
-  <form @submit.prevent="sendMessage">
-    <i class="fa-regular fa-face-smile smile"></i>
-    <input type="text" v-model="newMessageText" placeholder="Scrivi un messaggio">
-    <i class="fa-solid fa-microphone microphone"></i>
-  </form>
+       <!-- icone  -->
+         <ul class="list-unstyled d-flex icone-header-chat">
+           <li><i class="fa-solid fa-magnifying-glass mx-2"></i></li>
+           <li><i class="fa-solid fa-paperclip mx-2"></i></li>
+           <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+          </ul>
+
+      </div>
+
+
+    <!-- MESSAGGI CHAT -->
+      <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
+           <p>{{ message.text }}</p>
+      </div>
+
+
+     <!-- FORM MESSAGGIO -->
+       <form @submit.prevent="sendMessage">
+         <i class="fa-regular fa-face-smile smile"></i>
+         <input type="text" v-model="newMessageText" placeholder="Scrivi un messaggio">
+         <i class="fa-solid fa-microphone microphone"></i>
+      </form>
+
 </div>
+
+
+
+
+
+
+
 
   
 
