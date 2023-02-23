@@ -59,9 +59,10 @@
                          
                  <div>
 
-                    <div class="form-outline mb-3 cella-search">
-                        <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" />
-                      </div>
+                  <div class="form-outline cella-search">
+                    <label class="icon" for="form1"><i class="fas fa-search"></i></label>
+                    <input type="search" id="form1" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" />
+                  </div>
     
                 </div> 
 
@@ -72,7 +73,7 @@
                     <!-- CONTATTI -->
                     <li>
                
-                <div v-for="contact in contacts" :key="contact.id" class="contact">
+                <div v-for="contact in contacts" :key="contact.id"  v-bind:class="{ 'daeny': contact.isActive }" class="contact">
                     <img :src="contact.image" alt="Contact Image">
                     <div class="contact-info">
                       <h3>{{ contact.name }}</h3>
@@ -99,11 +100,22 @@
 
                     <div class="header-chat mb-3 d-flex">
 
-                        <img src="./img/image1.jpg" alt="Img profilo">
+                      <img src="./img/image1.jpg" alt="Img profilo">
+                        
                         <ul class="list-unstyled mx-2">
                             <li><h6>Daeny</h6></li>
                             <li><p>Ultimo accesso alle ore 13:45</p></li>
                         </ul>
+
+                        <!-- icone  -->
+
+                        <ul class="list-unstyled d-flex icone-header-chat">
+                          <li><i class="fa-solid fa-magnifying-glass mx-2"></i></li>
+                          <li><i class="fa-solid fa-paperclip mx-2"></i></li>
+                          <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                        </ul>
+
+
                     </div>
 
                 

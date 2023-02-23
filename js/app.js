@@ -13,7 +13,8 @@
                 id: 1,
                 name: 'Daeny',
                 image: 'img/image1.jpg',
-                lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?'
+                lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?',
+                isActive: true // nuova proprietà per gestire lo stato di Daeny
               },
               {
                 id: 2,
