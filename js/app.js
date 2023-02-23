@@ -14,25 +14,9 @@
                 id: 1,
                 name: 'Daeny',
                 image: 'img/image1.jpg',
-                lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?',
+                lastMessage: 'Ci sei per dare fuoco a qualcosa più tardi?🐉',
                 isActive: true, // nuova proprietà per gestire lo stato di Daeny
-                messages: [  //MILSTONE 2
-                  {
-                    id: 1,
-                    text: "Ciao come stai?",
-                    isSentByUser: true
-                  },
-                  {
-                    id: 2,
-                    text: "Bene grazie! E tu?",
-                    isSentByUser: false
-                  },
-                  {
-                    id: 3,
-                    text: "Anch'io bene, grazie!",
-                    isSentByUser: true
-                  }
-                ]
+                
               },
               {
                 id: 2,
@@ -50,7 +34,7 @@
                 id: 4,
                 name: 'Tyrion',
                 image: 'img/image4.jpg',
-                lastMessage: 'Beviamo qualcosa più tardi?🍷'
+                lastMessage: 'Beviamo qualcosa stasera?🍷'
               },
               {
                 id: 5,
@@ -98,7 +82,7 @@
               },
               {
                 id: 3,
-                text: 'Ci sei per dare fuoco a qualcosa più tardi?',
+                text: 'Ci sei per dare fuoco a qualcosa più tardi?🐉',
                 isSentByUser: false
               }
             ],
@@ -113,6 +97,9 @@
         },
 
         methods: {
+
+              
+
             sendMessage() {
                 if (!this.newMessageText) {
                     return;
@@ -132,7 +119,18 @@
                     };
                     this.messages.push(responseMessage);
                   }, 1000);
-            }
+            },
+
+            getActiveContact() {
+              return this.contacts.find(contact => contact.isActive);
+          },//MILSTONE 2 : RECUPERO CONTATTO ACTIVED
+
+          showConversation(index) {
+            this.contacts.forEach((contact, i) => {
+              contact.isActive = i === index;
+            });
+          }
+
           }
       
       });       

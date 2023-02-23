@@ -43,6 +43,9 @@
 
                     </ul>
 
+
+
+
                     <!-- NOTIFICHE -->
 
                     <li class="notifiche p-3 d-flex">
@@ -68,75 +71,66 @@
 
                     </li>
 
+<!-- MILSTONE 2: INIZIO -->
 
+                      
+
+                       <!-- CLICK SUL CONTATTO PER MOSTRARE LA CONVERSAZIONE -->
 
                     <!-- CONTATTI -->
                     <li>
-               
-                <div v-for="contact in contacts" :key="contact.id"  v-bind:class="{ 'daeny': contact.isActive }" class="contact">
-                    <img :src="contact.image" alt="Contact Image">
-                    <div class="contact-info">
-                      <h3>{{ contact.name }}</h3>
-                      <p> {{ contact.lastMessage }}</p>
-                    </div>
+               <!-- V-FOR PER VISUALIZZARE TUTTI I CONTATTI -->
+               <li v-for="(contact, index) in contacts" :key="contact.id" v-bind:class="{ 'daeny': contact.isActive }" >
+                <div class="contact" @click="showConversation(index)">
+                  <img :src="contact.image" alt="contact image">
+                  <div class="contact-info">
+                    <h3>{{ contact.name }}</h3>
+                    <p>{{ contact.lastMessage }}</p>
                   </div>
-
-
-                    </li>
+                </div>
+              </li>
                 </ul>
-
-                
-
-                
-
             </div>
 
-            <!-- MILSTONE 2: INIZIO -->
+            
+           
 
-            <div class="conversation col-7">
-              <!-- codice JS per la conversazione -->
-            </div>
+            
 
 
             <!-- CHAT -->
-            <div class="chat col-7">
+<div class="chat col-7">
 
-            <!-- HEADER CHAT  -->
-                
+  <!-- HEADER CHAT -->
+  <div class="header-chat mb-3 d-flex">
+    <img :src="getActiveContact().image" alt="Img profilo">
+    <ul class="list-unstyled mx-2">
+      <li><h6>{{ getActiveContact().name }}</h6></li>
+      <li class="d-flex"><div class="online"></div> <span class=" online-span">Online</span></li>
+    </ul>
+    <!-- icone  -->
+    <ul class="list-unstyled d-flex icone-header-chat">
+      <li><i class="fa-solid fa-magnifying-glass mx-2"></i></li>
+      <li><i class="fa-solid fa-paperclip mx-2"></i></li>
+      <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+    </ul>
+  </div>
 
-                    <div class="header-chat mb-3 d-flex">
+  <!-- MESSAGGI CHAT -->
+  <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
+    <p>{{ message.text }}</p>
+  </div>
+  <!-- FORM MESSAGGIO -->
+  <form @submit.prevent="sendMessage">
+    <i class="fa-regular fa-face-smile smile"></i>
+    <input type="text" v-model="newMessageText" placeholder="Scrivi un messaggio">
+    <i class="fa-solid fa-microphone microphone"></i>
+  </form>
+</div>
 
-                      <img src="./img/image1.jpg" alt="Img profilo">
-                        
-                        <ul class="list-unstyled mx-2">
-                            <li><h6>Daeny</h6></li>
-                            <li><p>Ultimo accesso alle ore 13:45</p></li>
-                        </ul>
-
-                        <!-- icone  -->
-
-                        <ul class="list-unstyled d-flex icone-header-chat">
-                          <li><i class="fa-solid fa-magnifying-glass mx-2"></i></li>
-                          <li><i class="fa-solid fa-paperclip mx-2"></i></li>
-                          <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                        </ul>
+  
 
 
-                    </div>
-
-                
-
-
-              <!-- MESSAGGI CHAT -->
-                <div v-for="message in messages" :key="message.id" class="message" :class="message.isSentByUser ? 'sent' : 'received'">
-                  <p>{{ message.text }}</p>
-                </div>
-                <form @submit.prevent="sendMessage" >
-                  <i class="fa-regular fa-face-smile smile"></i>
-                  <input type="text" v-model="newMessageText" placeholder="Scrivi un messaggio">
-                  <i class="fa-solid fa-microphone microphone"></i>
-                </form>
-              </div>
 
 
 
